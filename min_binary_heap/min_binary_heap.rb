@@ -13,7 +13,7 @@ class MinBinaryHeap
   def insert(node)
     @root = node if @items.empty?
     @items << node 
-    sift_up(@items.size - 1)
+    
     
   end
   
@@ -21,7 +21,7 @@ def sift_up(index)
   
   parent_index = (index / 2)
   return if index <= 1
-  return if @items[index] >= @items[parent_index]
+  return if @items[index].rating >= @items[parent_index].rating
   switch(index, parent_index)
   sift_up(parent_index)
 
@@ -39,7 +39,7 @@ def sift_down(index)
         child_index += 1
   end
 
-  return if @items[index] <= @items[child_index]
+  return if @items[index].rating <= @items[child_index].rating
   switch(index, child_index)
   sift_down(child_index)
 
@@ -91,7 +91,7 @@ end
     i 
   end
   
-  def printf
+  def print
     arr = @items
     if !arr.nil?
       arr.each do |ele|

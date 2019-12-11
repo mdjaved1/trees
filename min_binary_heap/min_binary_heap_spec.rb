@@ -57,7 +57,6 @@ RSpec.describe MinBinaryHeap, type: Class do
       it "deletes the node " do
         tree.insert(pacific_rim)
         tree.insert(braveheart)
-        binding.pry
         tree.delete(pacific_rim)
         expect(tree.items[0].title).to eq braveheart.title
         
@@ -71,8 +70,8 @@ RSpec.describe MinBinaryHeap, type: Class do
         tree.insert(inception)
         
         tree.delete(jedi)
-        expect(tree.items.size).to eq 5
-        expect(tree.items[2].title).to eq "Donnie Darko"
+        expect(tree.items.size).to eq 4
+        expect(tree.items[3].title).to eq "Donnie Darko"
       end
   end
   
